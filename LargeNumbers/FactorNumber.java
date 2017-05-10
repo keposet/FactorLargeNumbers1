@@ -9,7 +9,6 @@ public class FactorNumber {
     private final int LIMIT = 10000;
     private long initialValue = 0;
 
-
     public void findFactor(long value) {
         boolean foundFactor = false;
         int factor = 0;
@@ -29,19 +28,19 @@ public class FactorNumber {
         }
     }
 
-    public void printFactors(){
+    public void printFactors() {
         System.out.println("The Factors of " + initialValue + " are:");
         for (Integer factor : factorList) {
-            System.out.print(factor +" ");
+            System.out.print(factor + " ");
         }
 
     }
 
     public void findPrimes() {
-        int i = 0, limit = LIMIT, testValue = 2;
+        int i = 0, testValue = 2;
         boolean isPrime = true;
 
-        while (testValue < limit) {
+        while (testValue < LIMIT) {
 
             while (isPrime == true && i < primeList.size()) {
                 if (testValue % primeList.get(i) == 0) {
@@ -54,28 +53,22 @@ public class FactorNumber {
             i = 0;
 
             if (isPrime == true) {
-
                 primeList.add(testValue);
                 testValue++;
-
             } else {
                 testValue++;
                 isPrime = true;
-
             }
-
         }
     }
 
     public void printList() {
-
         for (Integer prime : primeList) {
             System.out.println(prime);
         }
-
     }
 
-    public void setInitialValue(long value){
+    public void setInitialValue(long value) {
         initialValue = value;
     }
 
